@@ -82,7 +82,7 @@ app.delete("/note/:id", (req, res) => {
 connection
   .sync({
     logging: console.log,
-    force: true
+    // force: true
   })
   .then(() => {
     console.log("Connection success");
