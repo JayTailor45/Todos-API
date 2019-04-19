@@ -17,6 +17,16 @@ const Todo = connection.define('Todo', {
     name: Sequelize.STRING,
 })
 
+app.get('/notes', (req,res)=> {
+    Todo.findAll()
+    .then((resp) => {
+        res.json(resp).status(200)
+    })
+    .catch((err)=> {
+        res.json({"error": JSON.stringify(err)}).status(400)
+    })
+})
+
 connection.sync({
     logging: console.log,
     force: true
