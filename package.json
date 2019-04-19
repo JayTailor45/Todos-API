@@ -1,0 +1,19 @@
+{
+  "name": "todos_app_backend",
+  "version": "1.0.0",
+  "description": "demo app to learn node js with mysql using sequelize",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "todo",
+    "notes",
+    "sequelize",
+    "sql",
+    "mysql"
+  ],
+  "author": "JayTailor45",
+  "license": "ISC"
+}
