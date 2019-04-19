@@ -61,6 +61,18 @@ app.put('/note/:id', (req,res)=> {
     })
 })
 
+app.delete('/note/:id', (req,res) => {
+    Todo.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then((rows)=> {
+        res.json(rows).status(200)
+    }).catch((err) => {
+        res.json({ "error" : JSON.stringify(err) }).status(400)
+    })
+})
+
 connection.sync({
     logging: console.log,
     force: true
