@@ -39,6 +39,15 @@ app.post('/note', (req,res)=> {
     })
 })
 
+app.get('/note/:id', (req,res) => {
+    Todo.findByPk(req.params.id)
+    .then((note) => {
+        res.json(note).status(200);
+    }).catch((err) => {
+        res.json({"error": JSON.stringify(err)}).status(400);
+    })
+})
+
 connection.sync({
     logging: console.log,
     force: true
