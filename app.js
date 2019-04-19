@@ -27,6 +27,18 @@ app.get('/notes', (req,res)=> {
     })
 })
 
+app.post('/note', (req,res)=> {
+    const note = new Todo();
+    note.name = req.body.name;
+
+    note.save()
+    .then((note) => {
+        res.json(note).status(200);
+    }).catch((err) => {
+        res.json({"error": JSON.stringify(err)}).status(400);
+    })
+})
+
 connection.sync({
     logging: console.log,
     force: true
