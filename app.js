@@ -39,12 +39,22 @@ app.post('/note', (req,res)=> {
     })
 })
 
+<<<<<<< Updated upstream
 app.get('/note/:id', (req,res) => {
     Todo.findByPk(req.params.id)
     .then((note) => {
         res.json(note).status(200);
     }).catch((err) => {
         res.json({"error": JSON.stringify(err)}).status(400);
+=======
+app.put('/note/:id', (req,res)=> {
+    Todo.update(req.body,{
+        where: { id: req.params.id }
+    }).then((note) => {
+        res.json(req.body).status(200)
+    }).catch((err) => {
+        res.json({ "error" : JSON.stringify(err) }).status(400)
+>>>>>>> Stashed changes
     })
 })
 
